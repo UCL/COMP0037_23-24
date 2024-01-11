@@ -8,17 +8,18 @@ Lab attendance will be monitored, but the exercises are **not graded**. You are 
 
 * Install [Git](https://git-scm.com) (if you don't already have it).
 * Install [Python 3](https://www.python.org/downloads/) (if you don't already have it).
-* Install [Ghostscript](https://ghostscript.com/index.html). For Windows, use the [64-bit binary AGPL release](https://ghostscript.com/releases/gsdnld.html). For Mac, use home brew and run ``brew install ghostscript``. For Linux, use ``apt install ghostscript`` (or your preferred package manager).
+* Install [Ghostscript](https://ghostscript.com/index.html). For Windows, use the [64-bit binary AGPL release](https://ghostscript.com/releases/gsdnld.html). For Mac, use home brew and run ``brew install ghostscript``. For Linux, use ``apt install ghostscript``, ``snap install code --classic`` (or your preferred package manager).
 
 In addition we highly recommend using Visual Studio code:
 
 * Download [Visual Studio Code](https://code.visualstudio.com/), an easy-to-use editor
 * Install the [Python Plugin](https://code.visualstudio.com/docs/python/python-tutorial/) and test the hello world example
 
-## Install software to support this module (will be made available the first week of term)
+## Install software to support this module
 
 * Download the material from GitHub: [COMP0037 Robotic Systems](https://github.com/UCL/COMP0037_23-24) and put the lab material in a folder named, for example, "comp0037-labs":
     ```
+    mkdir comp0037-labs
     cd comp0037-labs
     git clone https://github.com/UCL/COMP0037_23-24.git
     ```
@@ -26,7 +27,6 @@ In addition we highly recommend using Visual Studio code:
 * Open a new terminal in Visual Studio Code and make sure you are in the folder 'comp0037-labs'
 * Create and activate a virtual environment:
     ```
-    cd comp0037-labs
     python3 -m venv comp0037-venv
     # On Unix/MacOS:
     source comp0037-venv/bin/activate
@@ -44,18 +44,26 @@ In addition we highly recommend using Visual Studio code:
     conda create -n comp0037-venv python=3.9 -y
     conda activate comp0037-venv
     ```
-* Install Python package requirements:
+* Install the Python package requirements:
     ```sh
-    pip install -r requirements.txt
+    pip install -r requirements-1.txt
     ```
     In case packages are missing, you can just run
     ```sh
     pip install _package_
     ```
-* On the bottom left of you VS Code window you should see a "Select Interpreter" button:
+
+* Select the Python interpreter. If you do not do this, then none of the packages you just installed will be recognized. There are the "easy" instructions (which did not work for me, version 1.85.1) and the harder ones.
+    
+* Easier: On the bottom left of you VS Code window you should see a "Select Interpreter" button:
     * Click on the button
     * Select "Enter interpreter path..."
     * Select "Find..."
-        * Go to your virtual environment folder in "comp0037-venv" > Scripts > python.exe > Select Interpreter (Windows) 
-        * Go to your virtual environment folder in "comp0037-venv" > bin > python.exe (or just python if you don't see the .exe extension)> Select Interpreter (Unix/MacOS) 
+        * Go to your virtual environment folder in ```comp0037-venv``` > Scripts > python.exe > Select Interpreter (Windows) 
+        * Go to your virtual environment folder in ```comp0037-venv``` > bin > python.exe (or just python if you don't see the .exe extension)> Select Interpreter (Unix/MacOS) 
     * Instead of "Select Interpreter" you should now see "3.x.x('comp0037-venv':venv) or similar
+ 
+* Harder: Press <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>p</kbd>
+    * In the dialogue box type ```python: select interpreter```
+    * Use the file browser (which might open _behind_ the edit screen), navigate to the ```comp0037-venv``` directory and select ```bin/python```
+    * There is no visual update ot say the interpreter has worked but the dependencies seem to be in place.
