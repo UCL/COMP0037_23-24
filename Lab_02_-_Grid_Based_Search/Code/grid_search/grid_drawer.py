@@ -70,7 +70,7 @@ class GridDrawer(object):
             # do the conversion
             args = [
                 "ps2pdf",  # actual value doesn't matter
-                "-dNOPAUSE", "-dBATCH", "-dSAFER",
+                "-dNOPAUSE", "-dBATCH", "-dSAFER", "-dEPSCrop",
                 "-sDEVICE=pdfwrite",
                 "-sOutputFile=" + filename,
                 "-f",  "tmp.ps"
