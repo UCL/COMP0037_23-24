@@ -48,6 +48,6 @@ planner.extract_path_to_goal()
 planner.wait_for_key_press()
 
 # This how to take a screenshot of the search grid
-
+search_grid_drawer = planner.search_grid_drawer()
 search_grid_drawer.save_screenshot('breadth_first_empty_space.pdf')
 search_grid_drawer.save_screenshot('breadth_first_empty_space.png')
