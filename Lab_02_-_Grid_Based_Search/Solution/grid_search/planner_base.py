@@ -161,10 +161,10 @@ class PlannerBase(object):
         # Create the search grid from the occupancy grid and seed
         # unvisited and occupied cells.
         if (self._search_grid is None):
-            self._search_grid = SearchGrid.from_environment_map(
+            self._search_grid = SearchGrid.from_occupancy_grid(
                 self._environment_map)
         else:
-            self._search_grid.populate_from_environment_map(self._environment_map)
+            self._search_grid.populate_from_occupancy_grid(self._environment_map)
 
         # Needed for mypy because it can't figure out the previous lines guarantee that
         # self._search_grid cannot be None

@@ -36,8 +36,8 @@ from .search_grid_drawer import SearchGridDrawer
 class PlannerBase(object):
 
     # Construct a new planner object and set defaults.
-    def __init__(self, environment_map: OccupancyGrid):
-        self._environment_map = environment_map
+    def __init__(self, occupancy_grid: OccupancyGrid):
+        self._occupancy_grid = occupancy_grid
         self._search_grid: Optional[SearchGrid] = None
 
         # All these variables are used for controlling the graphics output
@@ -161,10 +161,10 @@ class PlannerBase(object):
         # Create the search grid from the occupancy grid and seed
         # unvisited and occupied cells.
         if (self._search_grid is None):
-            self._search_grid = SearchGrid.from_environment_map(
-                self._environment_map)
+            self._search_grid = SearchGrid.from_occupancy_grid(
+                self._occupancy_grid)
         else:
-            self._search_grid.populate_from_environment_map(self._environment_map)
+            self._search_grid.populate_from_occupancy_grid(self._occupancy_grid)
 
         # Needed for mypy because it can't figure out the previous lines guarantee that
         # self._search_grid cannot be None

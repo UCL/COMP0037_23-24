@@ -87,19 +87,19 @@ class SearchGrid(CellGrid):
 
         
     # 
-    def populate_from_environment_map(self, environment_map: OccupancyGrid):
-        self._grid = [[SearchGridCell((x, y), (environment_map._data[y][x] > 0)) for y in range(environment_map._height)]
-                for x in range(environment_map._width)]
+    def populate_from_occupancy_grid(self, occupancy_grid: OccupancyGrid):
+        self._grid = [[SearchGridCell((x, y), (occupancy_grid._data[y][x] > 0)) for y in range(occupancy_grid._height)]
+                for x in range(occupancy_grid._width)]
         
-        # Construct the class using an occupancy grid object
+    # Construct the class using an environment map. In this case, it's an occupancy grid
     @classmethod
-    def from_environment_map(cls, environment_map: OccupancyGrid):
+    def from_occupancy_grid(cls, occupancy_grid: OccupancyGrid):
 
-        (self) = cls(environment_map.width(),
-                     environment_map.height(), environment_map.resolution())
+        (self) = cls(occupancy_grid.width(),
+                     occupancy_grid.height(), occupancy_grid.resolution())
 
         # Populate the search grid from the occupancy grid
-        self.populate_from_environment_map(environment_map)
+        self.populate_from_occupancy_grid(occupancy_grid)
 
         return self
 
