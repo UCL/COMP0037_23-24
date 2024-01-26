@@ -9,7 +9,7 @@ import math
 from .dijkstra_planner import DijkstraPlanner
 from .occupancy_grid import OccupancyGrid
 
-class AStarPlannder(DijkstraPlanner):
+class AStarPlanner(DijkstraPlanner):
     def __init__(self, occupancy_grid: OccupancyGrid):
         DijkstraPlanner.__init__(self, occupancy_grid)
 
