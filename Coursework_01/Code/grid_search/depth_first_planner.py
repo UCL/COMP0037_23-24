@@ -1,8 +1,7 @@
-from typing import List
-
-from .occupancy_grid import OccupancyGrid
 from .planner_base import PlannerBase
+from .occupancy_grid import OccupancyGrid
 from .search_grid import SearchGridCell
+from typing import List
 
 
 class DepthFirstPlanner(PlannerBase):
@@ -24,7 +23,7 @@ class DepthFirstPlanner(PlannerBase):
         return not self.lifoQueue
 
     # Simply pull from the front of the list
-    def pop_cell_from_queue(self):
+    def pop_cell_from_queue(self) -> SearchGridCell:
         cell = self.lifoQueue.pop()
         return cell
 

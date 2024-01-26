@@ -1,5 +1,4 @@
 from collections import deque
-
 from .occupancy_grid import OccupancyGrid
 from .planner_base import PlannerBase
 from .search_grid import SearchGridCell
