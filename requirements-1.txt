@@ -14,10 +14,10 @@ cycler==0.12.1
 docopt==0.6.2
 EasyProcess==1.1
 entrypoint2==1.1
+Farama-Notifications==0.0.4
 fonttools==4.47.2
 ghostscript==0.7
-gym==0.26.2
-gym-notices==0.0.8
+gymnasium==0.29.1
 idna==3.6
 imageio==2.33.1
 importlib-metadata==7.0.1
