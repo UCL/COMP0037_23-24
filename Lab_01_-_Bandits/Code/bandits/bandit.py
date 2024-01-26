@@ -6,8 +6,8 @@ Created on 12 Jan 2022
 import math
 import numpy as np
 
-import gym
-from gym import spaces
+import gymnasium
+from gymnasium import spaces
 
 # This class implements an individual bandit. It is parameterized by a
 # mean and covariance. One or more samples can be drawn.
@@ -34,7 +34,7 @@ class Bandit:
 # The state space isn't really defined (bandits are a stateless
 # problem). The action is the numerical value of the arm to pull.
 
-class BanditEnvironment(gym.Env):
+class BanditEnvironment(gymnasium.Env):
     
     def __init__(self, number_of_bandits):
         super().__init__()

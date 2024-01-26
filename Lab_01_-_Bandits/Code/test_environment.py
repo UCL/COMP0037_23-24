@@ -6,7 +6,7 @@ Created on 13 Jan 2022
 @author: ucacsjj
 '''
 import numpy as np
-import gym
+import gymnasium
 
 from bandits.bandit import Bandit
 from bandits.bandit import BanditEnvironment
@@ -18,10 +18,15 @@ from bandits.bandit import BanditEnvironment
 # form specified below
 
 def run_bandits(environment, number_of_steps):
-
-    b = 0
-    rewards = numpy.zeros(1)
-    print(f'bandit = {b}, mean = {np.mean(rewards)}, sigma = {np.std(rewards)}')
+    
+    for b in range(0, environment.number_of_bandits()):
+        rewards = np.zeros(number_of_steps)
+        for s in range(0, number_of_steps):
+            obs, reward, done, info = environment.step(b)
+            rewards[s] = reward
+        
+        print(f'bandit={b}, mean={np.mean(rewards)}, sigma={np.std(rewards)}')
+        
         
 if __name__ == '__main__':
     

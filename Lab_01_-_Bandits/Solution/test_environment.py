@@ -6,7 +6,7 @@ Created on 13 Jan 2022
 @author: ucacsjj
 '''
 import numpy as np
-import gym
+import gymnasium
 
 from bandits.bandit import Bandit
 from bandits.bandit import BanditEnvironment

@@ -72,5 +72,6 @@ if __name__ == '__main__':
     plt.ion()
     plt.show()
     plt.pause(0.001)
+    print('Press enter to exit')
     input()
 
