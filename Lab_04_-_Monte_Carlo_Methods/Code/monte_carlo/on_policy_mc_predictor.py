@@ -54,7 +54,7 @@ class OnPolicyMCPredictor(MonteCarloPolicyPredictor):
 
         # Complete the implementation of this method.
         G = 0
-        #G = G + self._gamma * episode.reward(episode.number_of_steps() - 1)
+        #G = self._gamma * G + episode.reward(episode.number_of_steps() - 1)
         #state = episode.state(episode.number_of_steps() - 1).coords()
         #self._v.set_value(state[0], state[1], average_return)        
             
